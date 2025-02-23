@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Музыкальный плеер</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        button {
+            width: 100vw;
+            height: 100vh;
+            font-size: 24px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        button:hover {
+            filter: brightness(90%);
+        }
+
+        @media (orientation: portrait) {
+            button {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            button {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button onclick="playTrack()">ЖМИ</button>
+    <audio id="audioPlayer" src="your-track.mp3"></audio>
+
+    <script>
+        function playTrack() {
+            var audio = document.getElementById("audioPlayer");
+            audio.volume = 1.0; // Устанавливает максимальную громкость (значение от 0.0 до 1.0)
+            audio.play();
+        }
+    </script>
+</body>
+</html>
